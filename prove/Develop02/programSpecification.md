@@ -40,11 +40,12 @@ __Resonsibility:__
 * keeps track of user's information, available questions to ask, and list of journal entries
   
 __Behaviors:__
-* load entries, questions, and user information from a JSON file
+* load from a JSON file, and unpack it into entry strings, questions strings, and user information strings
+* create journalEntry objects from the entry strings
 * ask the user a random question
-* create journalEntry objects
 * display all entries by using each entry object display method
 * receive a text from the user and save it into the file
+* iterate over the objects to create a dictionary and save it into a JSON file
 
 __Attributes:__
 * entry: *JournalEntry*
