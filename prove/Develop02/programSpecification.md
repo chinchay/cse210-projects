@@ -32,7 +32,7 @@ __Attributes:__
 
 ### JournalBook
 
-![](images/JournalBook.drawio.png)
+![](images/JournalBook.png)
 
 __object__: JournalBook
 
