@@ -2,7 +2,7 @@ public class Prompt {
     public string _filename = "";
 
 
-    public string showOptions(){
+    public string ShowOptions(){
         string question = "Please select one of the following choices:";
         string options  = "1. Write\n2. Display\n3. Load\n4. Save\n5. Quit";
         string prompt   = "What would you like to do? ";
@@ -13,28 +13,28 @@ public class Prompt {
         return option;
     }
 
-    public int handleOptions( string option, JournalBook book ){
+    public int HandleOptions( string option, JournalBook book ){
         
 
         switch (option){
             case "1":
-                book.write();
+                book.Write();
                 return 10;
 
             case "2":
-                book.display();
+                book.Display();
                 return 20;
 
             case "3":
-                book.loadFromJSON();
+                book.LoadFromJSON();
                 return 30;
                 
             case "4":
-                book.saveToJSON();
+                book.SaveToJSON();
                 return 40;
 
             case "5":
-                book.checkAllIsSaved();
+                book.CheckAllIsSaved();
                 return 50;
 
             default:
@@ -43,7 +43,7 @@ public class Prompt {
         }
     }
 
-    public void run(){
+    public void Run(){
         string option = "";
         int count = 0;
         int maxIterations = 5;
@@ -51,18 +51,14 @@ public class Prompt {
         JournalBook book = new JournalBook();
         
         do {
-            option = showOptions();
+            option = ShowOptions();
 
-            int ans = handleOptions( option, book );
+            int ans = HandleOptions( option, book );
             // Console.WriteLine( ans.ToString() );
 
             count += 1;
 
         } while ( (option != "5") && (count < maxIterations) );
 
-        
-
-        
-        
     }
 }

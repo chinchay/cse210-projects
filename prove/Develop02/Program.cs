@@ -10,7 +10,7 @@ class Program
 
         Prompt p = new Prompt();
 
-        p.run();
+        p.Run();
         
 
 

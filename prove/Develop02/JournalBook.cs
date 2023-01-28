@@ -12,7 +12,7 @@ public class JournalBook{
 //    List<string> _listQuestion = new List<string>(); errors appear in the consructor, so I commented it out
 
 
-    public string readFile(string filename){
+    public string ReadFile(string filename){
         string text = "";
 
         try{
@@ -26,7 +26,7 @@ public class JournalBook{
     }
 
     // public List<JournalEntry> getListEntries( string jsonText ){
-    public void updateListEntries( string jsonText ){
+    public void UpdateListEntries( string jsonText ){
         // Example how to read JSON found here:
         // https://www.educative.io/answers/how-to-read-a-json-file-in-c-sharp
 
@@ -39,16 +39,16 @@ public class JournalBook{
     }
 
 
-    public string promptFilename(){
+    public string PromptFilename(){
         Console.WriteLine("What is the filename?");
         return Console.ReadLine();
     }
 
 
-    public void loadFromJSON(){
-        checkFilename();
-        string text = readFile(_filename);
-        updateListEntries(text);
+    public void LoadFromJSON(){
+        CheckFilename();
+        string text = ReadFile(_filename);
+        UpdateListEntries(text);
         _fileHasBeenLoaded = true;
     }
 
@@ -68,7 +68,7 @@ public class JournalBook{
     //     _listQuestion.Add(q1);
     // }
 
-    public string getRandomQuestion(){
+    public string GetRandomQuestion(){
         
         string q1 = "Who was the most interesting person I interacted with today?";
         string q2 = "What was the best part of my day?";
@@ -82,8 +82,8 @@ public class JournalBook{
     }
 
 
-    public void write(){
-        string question = getRandomQuestion();
+    public void Write(){
+        string question = GetRandomQuestion();
         Console.WriteLine(question);
         string answer = Console.ReadLine();
         string date = "2023";
@@ -94,32 +94,32 @@ public class JournalBook{
     }
 
 
-    public void display(){
+    public void Display(){
         foreach (JournalEntry e in _listEntry) {
-            e.display();
+            e.Display();
         }
     }
 
-    public void save2file(string text, string filename) {
+    public void Save2file(string text, string filename) {
         using (StreamWriter f = new StreamWriter(filename) ) {
             f.WriteLine(text); 
         }
     }
 
 
-    public void checkFilename(){
+    public void CheckFilename(){
         if (_filename == "") {
             Console.Write("What is the file name? ");
             _filename = Console.ReadLine();
         }
     }
 
-    public void checkFileContent(){
+    public void CheckFileContent(){
         if (_fileHasBeenLoaded == false) {
             if (File.Exists(_filename)) {
                 List<JournalEntry> tempList = new List<JournalEntry>();
                 tempList = _listEntry;
-                loadFromJSON(); // this will overwrite _listEntry
+                LoadFromJSON(); // this will overwrite _listEntry
 
                 // now add tempList to _listEntry:
                 foreach (JournalEntry j in tempList) {
@@ -129,21 +129,21 @@ public class JournalBook{
         }
     }
 
-    public void saveToJSON(){
-        checkFilename();
-        checkFileContent();
+    public void SaveToJSON(){
+        CheckFilename();
+        CheckFileContent();
 
         string json = JsonSerializer.Serialize(_listEntry);
         // Console.WriteLine(json);
         
-        save2file(json, _filename);
+        Save2file(json, _filename);
         _areEntriesSaved = true;
     }
 
 
-    public void checkAllIsSaved() {
+    public void CheckAllIsSaved() {
         if (_areEntriesSaved == false){
-            saveToJSON();
+            SaveToJSON();
         }
     }
 }

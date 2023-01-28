@@ -11,7 +11,7 @@ public class JournalEntry{
         this.answer   = answer;
     }
 
-    public void display(){
+    public void Display(){
         Console.WriteLine( $"Date: {date} - Prompt: {question}" );
         Console.WriteLine( $"{answer}\n" );
     }
