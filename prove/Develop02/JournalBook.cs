@@ -86,9 +86,8 @@ public class JournalBook{
         string question = GetRandomQuestion();
         Console.WriteLine(question);
         string answer = Console.ReadLine();
-        string date = "2023";
 
-        JournalEntry j = new JournalEntry( date, question, answer );
+        JournalEntry j = new JournalEntry(question, answer );
         _listEntry.Add(j);
         _areEntriesSaved = false;
     }

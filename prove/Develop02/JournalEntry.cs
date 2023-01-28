@@ -5,8 +5,11 @@ public class JournalEntry{
     public string question { get; set; }
     public string answer { get; set; }
 
-    public JournalEntry(string date, string question, string answer){
-        this.date     = date;
+    public JournalEntry(string question, string answer){
+        
+        DateTime today = DateTime.Today;
+        
+        this.date     = today.ToShortDateString();
         this.question = question;
         this.answer   = answer;
     }
