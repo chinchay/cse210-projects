@@ -46,7 +46,7 @@ public class Prompt {
     public void Run(){
         string option = "";
         int count = 0;
-        int maxIterations = 5;
+        int maxIterations = 50;
 
         JournalBook book = new JournalBook();
         
