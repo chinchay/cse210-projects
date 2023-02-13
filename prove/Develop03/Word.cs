@@ -33,4 +33,8 @@ public class Word {
     public string GetString(){
         return _text;
     }
+
+    public bool IsHidden() {
+        return _isHidden;
+    }
 }

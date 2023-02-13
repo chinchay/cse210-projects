@@ -4,9 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Console.WriteLine("Hello Develop03 World!");
-
-
         string book = "Proverbs";
         int chapter = 3;
         int verse_start = 5;
@@ -15,11 +12,21 @@ class Program
         Reference r = new Reference(book, chapter, verse_start, verse_end);
         
         Scripture s = new Scripture(r);
-
         s.String2Word();
+        s.Display();
 
+        bool isCompletelyHidden = false;
+        int countMax = 20;
+        int count = 0;
 
-
+        while (   (count < countMax)
+                & (!isCompletelyHidden)
+                & (Console.ReadLine() != "quit") ) {
+            //
+            s.HideWords();
+            s.Display();
+            isCompletelyHidden = s.IsCompletelyHidden();
+        }
 
     }
 }

@@ -23,10 +23,10 @@ public class Reference {
                                 4, ""
                             },
                             {
-                                5, "Trust in the Lord with all thine bheart; and lean not unto thine cown dunderstanding."
+                                5, "Trust in the Lord with all thine heart; and lean not unto thine own understanding."
                             },
                             {
-                                6, "In all thy ways aacknowledge him, and he shall bdirect thy cpaths."
+                                6, "In all thy ways acknowledge him, and he shall direct thy paths."
                             }
                         }
                     }
@@ -72,4 +72,9 @@ public class Reference {
         }
         return text;
     }
+
+    public string GetBook(){return _book;}
+    public int GetChapter(){return _chapter;}
+    public int GetVerseStart(){ return _verse_start;}
+    public int GetVerseEnd(){ return _verse_end;}
 }
