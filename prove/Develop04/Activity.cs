@@ -1,6 +1,6 @@
 public class Activity {
-    int _seconds;
-    string _activityType;
+    private int _seconds;
+    private string _activityType;
     protected Random _randGenerator = new Random();
     private TimeSpan _elapsed;
     private DateTime _start;
