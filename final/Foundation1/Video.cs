@@ -56,7 +56,7 @@ public class Video {
         Console.WriteLine( $"Title   : {_title}" );
         Console.WriteLine( $"Author  : {_author}" );
         Console.WriteLine( $"Duration: {_duration.ToString()}" );
-        Console.WriteLine("Comments:");
+        Console.WriteLine( $"Comments: {GetNumberOfComments().ToString()}" );
 
         foreach (Comment comment in _listComment){
             comment.Display();
